@@ -1,0 +1,16 @@
+<div class="text-center" ng-controller="VorstandController as vorstand">
+  <h1>Vorstand</h1>
+  <div class="col-md-3 col-sm-4 col-xs-6 col-height" ng-repeat="mitglied in vorstand.entries">
+    <a ng-click="vorstand.openLightboxModal($index)" style="cursor: pointer">
+      <img ng-src="{{mitglied.thumbUrl}}" class="img-thumbnail" />
+    </a><br />
+    <strong>{{mitglied.funktion}}</strong><br />
+    {{mitglied.name}}<br />
+    <address>
+    <!--<span ng-if="mitglied.adresse !== undefined" ng-bind-html='mitglied.adresse'></span>
+    <span ng-if="mitglied.adresse !== undefined"><br /></span>
+    <span ng-if="mitglied.telefon !== undefined">{{mitglied.telefon | tel}}<br /></span>-->
+    <span ng-if="mitglied.email !== undefined"><a ng-href="mailto:{{mitglied.email}}">{{mitglied.email}}</a><br /></span>
+    </address>
+  </div>
+</div>

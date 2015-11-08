@@ -1,0 +1,11 @@
+<div class="text-center" ng-controller="AgendaController as agenda">
+  <h1>Agenda</h1>
+  <table class="table table-hover table-responsive">
+    <tr ng-repeat="x in agenda.entries">
+      <td>{{ x.datum }}</td>
+      <td>{{ x.name }}</td>
+      <td>{{ x.ort }}</td>
+      <!--<td>{{ x.auftritt }}</td>-->
+    </tr>
+  </table>
+</div>

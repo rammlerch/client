@@ -1,0 +1,15 @@
+<div class="modal-body"
+     ng-swipe-left="Lightbox.nextImage()"
+     ng-swipe-right="Lightbox.prevImage()" ng-click="$dismiss()">
+
+  <!-- image -->
+  <div class="lightbox-image-container">
+    <img lightbox-src="{{Lightbox.imageUrl}}">
+  </div>
+
+  <!-- caption -->
+  <div class='text-center' style="margin: 1em 0 0;">
+    <strong>{{Lightbox.imageCaption}}</strong>
+  </div>
+
+</div>

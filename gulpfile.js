@@ -27,3 +27,23 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
 gulp.task('default', ['clean'], function () {
   gulp.start('build');
 });
+
+var ftp = require('vinyl-ftp');
+var gutil = require('gulp-util');
+var minimist = require('minimist');
+var args = minimist(process.argv.slice(2));
+
+gulp.task('deploy', function() {
+  var remotePath = '/dist/';
+  var conn = ftp.create({
+    host: 'ftp.rammler.ch',
+    user: args.user,
+    password: args.password,
+    parallel: 1,
+    log: gutil.log
+  });
+
+  gulp.src(['./dist/**/*'])
+    .pipe(conn.newer(''))
+    .pipe(conn.dest(''));
+});

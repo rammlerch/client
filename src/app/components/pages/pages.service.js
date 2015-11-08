@@ -20,7 +20,7 @@ angular.module('rammler')
             { name: 'Euphonium', path: '/mitglieder/euphonium'},
             { name: 'Bass', path: '/mitglieder/bass'},
             { name: 'Schlagzeug', path: '/mitglieder/schlagzeug'},
-            { name: 'Paucke', path: '/mitglieder/paucke'},
+            { name: 'Pauke', path: '/mitglieder/pauke'},
             { name: 'Glocke', path: '/mitglieder/glocke'}
           ]},
           { name: 'Agenda', path: '/agenda'}

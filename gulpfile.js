@@ -34,7 +34,7 @@ var minimist = require('minimist');
 var args = minimist(process.argv.slice(2));
 
 gulp.task('deploy', function() {
-  var remotePath = '/dist/';
+  var remotePath = '';
   var conn = ftp.create({
     host: 'ftp.rammler.ch',
     user: args.user,
@@ -44,6 +44,6 @@ gulp.task('deploy', function() {
   });
 
   gulp.src(['./dist/**/*'])
-    .pipe(conn.newer(''))
-    .pipe(conn.dest(''));
+    .pipe(conn.newer(remotePath))
+    .pipe(conn.dest(remotePath));
 });

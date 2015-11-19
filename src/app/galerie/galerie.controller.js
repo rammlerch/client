@@ -12,7 +12,7 @@
         });
 
       vm.openLightboxModal = function (index) {
-        Lightbox.openModal(vm.entries, index);
+        Lightbox.openModal(vm.data.bilder, index);
       };
 
   }]);

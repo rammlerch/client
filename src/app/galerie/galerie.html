@@ -1,0 +1,9 @@
+<div class="text-center">
+  <h1 class="text-capitalize">{{galerie.data.name}}</h1>
+  <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="gal in galerie.data.bilder">
+    <a ng-click="mitglied.openLightboxModal($index)" style="cursor: pointer">
+      <img ng-src="{{gal.thumbUrl}}" class="img-thumbnail">
+    </a><br/>
+    {{mit.name}}
+  </div>
+</div>

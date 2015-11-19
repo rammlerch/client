@@ -18,7 +18,11 @@
 
       dataFactory.getMitglied = function(register) {
         return $http.get(urlBase+'/ch/rammler/register/'+register+'/mitglied');
-      }
+      };
+
+      dataFactory.getGalerie = function(register) {
+        return $http.get(urlBase+'/ch/rammler/galerie');
+      };
 
       return dataFactory;
     });

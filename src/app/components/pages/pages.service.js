@@ -23,7 +23,8 @@ angular.module('rammler')
             { name: 'Pauke', path: '/mitglieder/pauke'},
             { name: 'Glocke', path: '/mitglieder/glocke'}
           ]},
-          { name: 'Agenda', path: '/agenda'}
+          { name: 'Agenda', path: '/agenda'},
+          { name: 'Galerie', path: '/galerie'}
           //{ name: 'Berichte', path: '/berichte'},
           //{ name: 'Galerie', path: '/galerie'},
           //{ name: 'Links', path: '/links'}
@@ -36,7 +37,8 @@ angular.module('rammler')
           { path: '/verein/kontakt', component: 'kontakt' },
           { path: '/verein/impressum', component: 'impressum' },
           { path: '/mitglieder/:instr', component: 'mitglied' },
-          { name: 'Agenda', path: '/agenda', component: 'agenda' }
+          { name: 'Agenda', path: '/agenda', component: 'agenda' },
+          { name: 'Galerie', path: '/galerie', component: 'galerie' }
           //{ name: 'Berichte', path: '/berichte', component: 'nyi' },
           //{ path: '/galerie', component: 'nyi' },
           //{ path: '/links', component: 'nyi' }

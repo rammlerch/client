@@ -35,10 +35,21 @@ var args = minimist(process.argv.slice(2));
 
 gulp.task('deploy', function() {
   var remotePath = '';
+
+  if(args.branch == 'master') {
+    var user = args.user;
+    var password = args.password;
+  } else {
+    var user = args.user_sandbox;
+    var password = args.password_sandbox;
+  }
+  gutil.log('branch', gutil.colors.magenta(args.branch));
+  gutil.log('user', gutil.colors.magenta(user));
+
   var conn = ftp.create({
     host: 'ftp.rammler.ch',
-    user: args.user,
-    password: args.password,
+    user: user,
+    password: password,
     parallel: 1,
     log: gutil.log
   });

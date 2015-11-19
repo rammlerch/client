@@ -26,5 +26,9 @@
         'height': 'auto'                            // custom
       };
     };
+
+    LightboxProvider.getImageCaption = function (image) {
+      return image.captionArray;
+    };
   });
 })();

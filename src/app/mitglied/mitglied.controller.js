@@ -9,6 +9,13 @@
 
       dataFactory.getMitglied(vm.instr).then(function (response) {
           vm.entries = response.data;
+          angular.forEach(vm.entries, function(value, key) {
+            value.captionArray = [
+              value.vorname + " " + value.nachname,
+              value.spitzname,
+              "Eintritt: " + value.eintritt
+            ];
+          });
         }, function () {
         });
 

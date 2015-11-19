@@ -20,7 +20,7 @@
         return $http.get(urlBase+'/ch/rammler/register/'+register+'/mitglied');
       };
 
-      dataFactory.getGalerie = function(register) {
+      dataFactory.getGalerie = function() {
         return $http.get(urlBase+'/ch/rammler/galerie');
       };
 

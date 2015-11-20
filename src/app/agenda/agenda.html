@@ -2,10 +2,12 @@
   <h1>Agenda</h1>
   <table class="table table-hover table-responsive">
     <tr ng-repeat="x in agenda.entries">
-      <td>{{ x.datum }}</td>
-      <td>{{ x.name }}</td>
-      <td>{{ x.ort }}</td>
-      <!--<td>{{ x.auftritt }}</td>-->
+      <th class="text-center" ng-if="x.highlight == 1">{{ x.datum }}</th>
+      <th class="text-center" ng-if="x.highlight == 1">{{ x.name }}</th>
+      <th class="text-center" ng-if="x.highlight == 1">{{ x.name }}</th>
+      <td ng-if="x.highlight != 1">{{ x.datum }}</td>
+      <td ng-if="x.highlight != 1">{{ x.name }}</td>
+      <td ng-if="x.highlight != 1">{{ x.ort }}</td>
     </tr>
   </table>
 </div>

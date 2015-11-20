@@ -7,10 +7,11 @@
     <strong>{{mitglied.funktion}}</strong><br />
     {{mitglied.name}}<br />
     <address>
-    <!--<span ng-if="mitglied.adresse !== undefined" ng-bind-html='mitglied.adresse'></span>
-    <span ng-if="mitglied.adresse !== undefined"><br /></span>
-    <span ng-if="mitglied.telefon !== undefined">{{mitglied.telefon | tel}}<br /></span>-->
-    <span ng-if="mitglied.email !== undefined"><a ng-href="mailto:{{mitglied.email}}">{{mitglied.email}}</a><br /></span>
+      <span ng-if="mitglied.adresse !== null" ng-bind-html='mitglied.adresse'></span>
+      <span ng-if="mitglied.adresse !== null"><br/></span>
+      <span ng-if="mitglied.telefon !== null">{{mitglied.telefon | tel}}<br/></span>
+      <span ng-if="mitglied.email !== null"><a ng-href="mailto:{{mitglied.email}}">{{mitglied.email}}</a></span>
+      <span ng-repeat="a in mitglied.newlines track by $index"><br/>&nbsp;</span>
     </address>
   </div>
 </div>

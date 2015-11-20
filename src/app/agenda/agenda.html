@@ -4,7 +4,7 @@
     <tr ng-repeat="x in agenda.entries">
       <th class="text-center" ng-if="x.highlight == 1">{{ x.datum }}</th>
       <th class="text-center" ng-if="x.highlight == 1">{{ x.name }}</th>
-      <th class="text-center" ng-if="x.highlight == 1">{{ x.name }}</th>
+      <th class="text-center" ng-if="x.highlight == 1">{{ x.ort }}</th>
       <td ng-if="x.highlight != 1">{{ x.datum }}</td>
       <td ng-if="x.highlight != 1">{{ x.name }}</td>
       <td ng-if="x.highlight != 1">{{ x.ort }}</td>

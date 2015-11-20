@@ -21,7 +21,7 @@
       };
 
       dataFactory.getGalerie = function() {
-        return $http.get(urlBase+'/ch/rammler/galerie');
+        return $http.get(urlBase + '/ch/rammler/galerie/1');
       };
 
       return dataFactory;

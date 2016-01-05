@@ -1,5 +1,5 @@
 <div class="text-center" ng-controller="RdwController as rdw">
-  <h1>Rammler der Woche</h1>
+  <h1>{{rdw.data.titel}}</h1>
   <div class="col-md-4 col-sm-6 col-xs-12 col-height" ng-repeat="entry in rdw.data.entries">
     <img ng-src="{{entry.thumbUrl}}" class="img-thumbnail" />
     <br />

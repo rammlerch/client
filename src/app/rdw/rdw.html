@@ -1,0 +1,24 @@
+<div class="text-center" ng-controller="RdwController as rdw">
+  <h1>Rammler der Woche</h1>
+  <div class="col-md-4 col-sm-6 col-xs-12 col-height" ng-repeat="entry in rdw.data.entries">
+    <img ng-src="{{entry.thumbUrl}}" class="img-thumbnail" />
+    <br />
+    <br />
+    <input type="radio" ng-model="rdw.vote" value="{{entry.id}}" ng-if="rdw.data.canVote"/>
+    <span ng-if="!rdw.data.canVote"><strong>{{entry.stimmen}} ({{rdw.inPerc(entry.stimmen) | number : 2}}%)</strong></span>
+    <br />
+    <br />
+    <strong>{{entry.name}}</strong><br />
+    {{entry.text}}
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="rdw.data.canVote">
+    <br />
+    <br />
+    <button ng-click="rdw.doVote()">
+      Abstimmen
+    </button>
+  </div>
+</div>

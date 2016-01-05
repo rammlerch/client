@@ -24,6 +24,14 @@
         return $http.get(urlBase + '/ch/rammler/galerie/1');
       };
 
+      dataFactory.getRammlerDerWoche = function() {
+        return $http.get(urlBase + '/ch/rammler/rdw/1');
+      }
+
+      dataFactory.vote = function(voteid) {
+        $http.put(urlBase + '/ch/rammler/vote/'+voteid);
+      }
+
       return dataFactory;
     });
 

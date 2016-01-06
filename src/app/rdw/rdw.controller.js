@@ -11,7 +11,9 @@
       });
 
       vm.doVote = function() {
-        dataFactory.vote(vm.vote);
+        dataFactory.vote(vm.vote).then(function (response) {
+          vm.data.canVote = false;
+        });
       }
 
       vm.inPerc = function(stimme) {

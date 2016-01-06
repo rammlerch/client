@@ -29,7 +29,7 @@
       }
 
       dataFactory.vote = function(voteid) {
-        $http.put(urlBase + '/ch/rammler/vote/'+voteid);
+        return $http.put(urlBase + '/ch/rammler/vote/'+voteid);
       }
 
       return dataFactory;

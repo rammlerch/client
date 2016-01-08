@@ -5,7 +5,7 @@
     .module('rammler')
     .service('dataFactory', function($http) {
 
-      var urlBase = 'http://localhost/rammler/server/index.php';
+      var urlBase = '/rest';
       var dataFactory = {};
 
       dataFactory.getAgenda = function () {

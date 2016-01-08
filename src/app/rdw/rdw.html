@@ -1,34 +1,10 @@
 <div class="text-center" ng-controller="RdwController as rdw">
-  <h1>{{rdw.data.titel}}</h1>
-  <div class="col-md-4 col-sm-6 col-xs-12 col-height" ng-repeat="entry in rdw.data.entries">
-    <img ng-src="{{entry.thumbUrl}}" class="img-thumbnail" />
+  <h1>Rammler der Woche 1</h1>
+  <div class="col-md-12 col-sm-12 col-xs-12 col-height">
+    <img ng-src="rest/ch/rammler/register/thumb/40" class="img-thumbnail" />
     <br />
     <br />
-    <input type="radio" ng-model="rdw.vote" value="{{entry.id}}" ng-if="rdw.showForm"/>
-    <span ng-if="!rdw.showForm"><strong>{{entry.stimmen}} ({{rdw.inPerc(entry.stimmen) | number : 2}}%)</strong></span>
-    <br />
-    <br />
-    <strong>{{entry.name}}</strong><br />
-    {{entry.text}}
-  </div>
-  <br />
-  <br />
-  <br />
-  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="rdw.showForm">
-    <br />
-    <br />
-    <button ng-click="rdw.doVote()">
-      Abstimmen
-    </button>
-    <button ng-click="rdw.toggleForm()">
-      Ergebniss anzeigen
-    </button>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="!rdw.showForm && rdw.data.canVote">
-    <br />
-    <br />
-    <button ng-click="rdw.toggleForm()">
-      Formular anzeigen
-    </button>
+    <strong>Petra Troxler</strong><br />
+    Sie merkt am Sonntig Morge, dass sie s &Auml;mtli zom f&ouml;tele h&auml;tti... Nor &auml;be am Sonntig esch es ame z spot...
   </div>
 </div>

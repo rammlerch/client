@@ -1,4 +1,4 @@
-<div class="text-center" ng-controller="RdwController as rdw" ng-if="rdw.isEnded">
+<div class="text-center" ng-controller="RdwController as rdw" ng-if="!rdw.isEnded">
   <h1>{{rdw.data.titel}}</h1>
   <div class="col-md-4 col-sm-6 col-xs-12 col-height" ng-repeat="entry in rdw.data.entries">
     <img ng-src="{{entry.thumbUrl}}" class="img-thumbnail" />
@@ -33,7 +33,7 @@
   </div>
   </div>
 </div>
-<div class="text-center" ng-controller="RdwController as rdw" ng-if="!rdw.isEnded">
+<div class="text-center" ng-controller="RdwController as rdw" ng-if="rdw.isEnded">
   <h1>{{rdw.data.titel}}</h1>
   <div class="col-md-12 col-sm-12 col-xs-12 col-height">
     <img ng-src="rdw.winner.thumbUrl" class="img-thumbnail" />

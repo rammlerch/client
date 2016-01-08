@@ -40,7 +40,8 @@ angular.module('rammler')
           { path: '/mitglieder/:instr', component: 'mitglied' },
           { name: 'Agenda', path: '/agenda', component: 'agenda' },
           { name: 'Galerie', path: '/galerie', component: 'galerie' },
-          { path: '/rdw', component: 'rdw' }
+          { path: '/rdw', component: 'rdw' },
+          { path: '/rdw/nomination', component: 'rdwNomination' }
           //{ name: 'Berichte', path: '/berichte', component: 'nyi' },
           //{ path: '/galerie', component: 'nyi' },
           //{ path: '/links', component: 'nyi' }

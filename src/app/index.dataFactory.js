@@ -5,7 +5,7 @@
     .module('rammler')
     .service('dataFactory', function($http) {
 
-      var urlBase = '/rest';
+      var urlBase = 'http://localhost/rammler/server/index.php';
       var dataFactory = {};
 
       dataFactory.getAgenda = function () {
@@ -20,6 +20,10 @@
         return $http.get(urlBase+'/ch/rammler/register/'+register+'/mitglied');
       };
 
+      dataFactory.getMitglieder = function() {
+        return $http.get(urlBase+'/ch/rammler/mitglied');
+      };
+
       dataFactory.getGalerie = function() {
         return $http.get(urlBase + '/ch/rammler/galerie/1');
       };
@@ -28,8 +32,20 @@
         return $http.get(urlBase + '/ch/rammler/rdw/1');
       }
 
+      dataFactory.getRdwNomination = function() {
+        return $http.get(urlBase + '/ch/rammler/rdw/nomination/aktuell');
+      }
+
       dataFactory.vote = function(voteid) {
         return $http.put(urlBase + '/ch/rammler/vote/'+voteid);
+      }
+
+      dataFactory.nominate = function(data) {
+        return $http({
+          url: urlBase + '/ch/rammler/rdw/nomination/aktuell',
+          method: "PUT",
+          data: data
+        });
       }
 
       return dataFactory;

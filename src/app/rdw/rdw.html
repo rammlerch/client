@@ -4,8 +4,8 @@
     <img ng-src="{{entry.thumbUrl}}" class="img-thumbnail" />
     <br />
     <br />
-    <input type="radio" ng-model="rdw.vote" value="{{entry.id}}" ng-if="rdw.data.canVote"/>
-    <span ng-if="!rdw.data.canVote"><strong>{{entry.stimmen}} ({{rdw.inPerc(entry.stimmen) | number : 2}}%)</strong></span>
+    <input type="radio" ng-model="rdw.vote" value="{{entry.id}}" ng-if="rdw.showForm"/>
+    <span ng-if="!rdw.showForm"><strong>{{entry.stimmen}} ({{rdw.inPerc(entry.stimmen) | number : 2}}%)</strong></span>
     <br />
     <br />
     <strong>{{entry.name}}</strong><br />
@@ -14,11 +14,21 @@
   <br />
   <br />
   <br />
-  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="rdw.data.canVote">
+  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="rdw.showForm">
     <br />
     <br />
     <button ng-click="rdw.doVote()">
       Abstimmen
+    </button>
+    <button ng-click="rdw.toggleForm()">
+      Ergebniss anzeigen
+    </button>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="!rdw.showForm && rdw.data.canVote">
+    <br />
+    <br />
+    <button ng-click="rdw.toggleForm()">
+      Formular anzeigen
     </button>
   </div>
 </div>

@@ -25,10 +25,7 @@ angular.module('rammler')
           ]},
           { name: 'Agenda', path: '/agenda'},
           { name: 'Rammler der Woche', path: '/rdw'},
-          { name: 'Galerie', path: '/galerie'}
-          //{ name: 'Berichte', path: '/berichte'},
-          //{ name: 'Galerie', path: '/galerie'},
-          //{ name: 'Links', path: '/links'}
+          { name: 'Galerie', path: '/galerie/1'}
         ];
       },
       router: function() {
@@ -38,13 +35,10 @@ angular.module('rammler')
           { path: '/verein/kontakt', component: 'kontakt' },
           { path: '/verein/impressum', component: 'impressum' },
           { path: '/mitglieder/:instr', component: 'mitglied' },
-          { name: 'Agenda', path: '/agenda', component: 'agenda' },
-          { name: 'Galerie', path: '/galerie', component: 'galerie' },
+          { path: '/agenda', component: 'agenda' },
+          { path: '/galerie/:id', component: 'galerieDetail' },
           { path: '/rdw', component: 'rdw' },
           { path: '/rdw/nomination', component: 'rdwNomination' }
-          //{ name: 'Berichte', path: '/berichte', component: 'nyi' },
-          //{ path: '/galerie', component: 'nyi' },
-          //{ path: '/links', component: 'nyi' }
         ];
       }
     };

@@ -24,8 +24,12 @@
         return $http.get(urlBase+'/ch/rammler/mitglied');
       };
 
-      dataFactory.getGalerie = function() {
-        return $http.get(urlBase + '/ch/rammler/galerie/1');
+      dataFactory.getGalerie = function(galerieId) {
+        return $http.get(urlBase + '/ch/rammler/galerie/'+galerieId);
+      };
+
+      dataFactory.getGalerien = function() {
+        return $http.get(urlBase + '/ch/rammler/galerie');
       };
 
       dataFactory.getRammlerDerWoche = function() {

@@ -3,10 +3,10 @@
 
   angular
     .module('rammler')
-    .controller('GalerieController', ['dataFactory', 'Lightbox', function (dataFactory, Lightbox) {
+    .controller('GalerieDetailController', ['dataFactory', 'Lightbox', '$routeParams', function (dataFactory, Lightbox, $routeParams) {
       var vm = this;
 
-      dataFactory.getGalerie().then(function (response) {
+      dataFactory.getGalerie($routeParams.id).then(function (response) {
           vm.data = response.data;
         }, function () {
         });

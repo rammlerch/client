@@ -33,7 +33,7 @@
       };
 
       dataFactory.getRammlerDerWoche = function() {
-        return $http.get(urlBase + '/ch/rammler/rdw/1');
+        return $http.get(urlBase + '/ch/rammler/rdw/2');
       }
 
       dataFactory.getRdwNomination = function() {

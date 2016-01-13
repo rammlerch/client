@@ -14,15 +14,11 @@
 
       vm.doVote = function() {
         dataFactory.vote(vm.vote).then(function (response) {
-          vm.data.canVote = false;
-          vm.showForm = false;
-          for (var i = 0; i < vm.data.entries.length; i++) {
-            if(vm.data.entries[i].id==vm.vote) {
-              vm.data.entries[i].stimmen = vm.data.entries[i].stimmen + 1;
-              break;
-            }
-          }
-          });
+          dataFactory.getRammlerDerWoche().then(function (response) {
+            vm.data = response.data;
+            vm.showForm = vm.data.canVote;
+          })
+        });
       }
 
       vm.toggleForm = function() {

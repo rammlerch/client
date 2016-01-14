@@ -25,7 +25,7 @@ angular.module('rammler')
           ]},
           { name: 'Agenda', path: '/agenda'},
           { name: 'Rammler der Woche', path: '/rdw'},
-          { name: 'Galerie', path: '/galerie/2'}
+          { name: 'Galerie', path: '/galerie'}
         ];
       },
       router: function() {
@@ -36,6 +36,7 @@ angular.module('rammler')
           { path: '/verein/impressum', component: 'impressum' },
           { path: '/mitglieder/:instr', component: 'mitglied' },
           { path: '/agenda', component: 'agenda' },
+          { path: '/galerie', component: 'galerie' },
           { path: '/galerie/:id', component: 'galerieDetail' },
           { path: '/rdw', component: 'rdw' },
           { path: '/rdw/nomination', component: 'rdwNomination' }

@@ -29,7 +29,7 @@
       };
 
       dataFactory.getGalerien = function() {
-        return $http.get(urlBase + '/ch/rammler/galerie');
+        return $http.get(urlBase + '/ch/rammler/galerie/aktiv');
       };
 
       dataFactory.getRammlerDerWoche = function() {

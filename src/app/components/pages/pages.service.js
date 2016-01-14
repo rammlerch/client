@@ -25,7 +25,7 @@ angular.module('rammler')
           ]},
           { name: 'Agenda', path: '/agenda'},
           { name: 'Rammler der Woche', path: '/rdw'},
-          { name: 'Galerie', path: '/galerie/1'}
+          { name: 'Galerie', path: '/galerie/2'}
         ];
       },
       router: function() {

@@ -1,34 +1,9 @@
 <div class="text-center" ng-controller="RdwController as rdw">
-  <h1>{{rdw.data.titel}}</h1>
-  <div class="col-md-4 col-sm-6 col-xs-12 col-height" ng-repeat="entry in rdw.data.entries">
-    <img ng-src="{{entry.thumbUrl}}" class="img-thumbnail" />
-    <br />
-    <br />
-    <input type="radio" ng-model="rdw.vote" value="{{entry.id}}" ng-if="rdw.showForm"/>
-    <span ng-if="!rdw.showForm"><strong>{{entry.stimmen}} ({{rdw.inPerc(entry.stimmen) | number : 2}}%)</strong></span>
-    <br />
-    <br />
-    <strong>{{entry.name}}</strong><br />
-    {{entry.text}}
-  </div>
-  <br />
-  <br />
-  <br />
-  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="rdw.showForm">
-    <br />
-    <br />
-    <button ng-click="rdw.doVote()" ng-if="rdw.vote > 0">
-      Abstimmen
-    </button>
-    <button ng-click="rdw.toggleForm()">
-      Ergebniss anzeigen
-    </button>
-  </div>
-  <div class="col-md-12 col-sm-12 col-xs-12" ng-if="!rdw.showForm && rdw.data.canVote">
-    <br />
-    <br />
-    <button ng-click="rdw.toggleForm()">
-      Formular anzeigen
-    </button>
+  <div class="col-md-12 col-sm-12 col-xs-12 " ng-repeat="entry in rdw.data" >
+    <h1 class="text-capitalize">{{entry.titel}}</h1>
+    <a href="#/rdw/{{entry.id}}">
+      <img ng-src="{{entry.winner.thumbUrl}}" class="img-thumbnail" style="height: 150px" ng-show="entry.isEnded == 1">
+      <img ng-src="assets/images/abstimmung.png" class="img-thumbnail" style="height: 150px" ng-show="entry.isEnded == 0">
+    </a>
   </div>
 </div>

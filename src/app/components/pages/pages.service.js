@@ -39,6 +39,7 @@ angular.module('rammler')
           { path: '/galerie', component: 'galerie' },
           { path: '/galerie/:id', component: 'galerieDetail' },
           { path: '/rdw', component: 'rdw' },
+          { path: '/rdw/:id', component: 'rdwDetail' },
           { path: '/rdw/nomination', component: 'rdwNomination' }
         ];
       }

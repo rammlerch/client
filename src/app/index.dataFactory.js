@@ -32,8 +32,12 @@
         return $http.get(urlBase + '/ch/rammler/galerie/aktiv');
       };
 
-      dataFactory.getRammlerDerWoche = function() {
-        return $http.get(urlBase + '/ch/rammler/rdw/2');
+      dataFactory.getRammlerDerWoche = function(rdwId) {
+        return $http.get(urlBase + '/ch/rammler/rdw/'+rdwId);
+      }
+
+      dataFactory.getRammlerDerWochen = function() {
+        return $http.get(urlBase + '/ch/rammler/rdw/aktiv');
       }
 
       dataFactory.getRdwNomination = function() {

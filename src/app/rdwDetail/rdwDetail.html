@@ -4,7 +4,7 @@
     <img ng-src="{{entry.thumbUrl}}" class="img-thumbnail" />
     <br />
     <br />
-    <input type="radio" ng-model="rdw.vote" value="{{entry.id}}" ng-if="rdwDetail.showForm"/>
+    <input type="radio" ng-model="rdwDetail.vote" value="{{entry.id}}" ng-if="rdwDetail.showForm"/>
     <span ng-if="!rdwDetail.showForm"><strong>{{entry.stimmen}} ({{rdwDetail.inPerc(entry.stimmen) | number : 2}}%)</strong></span>
     <br />
     <br />

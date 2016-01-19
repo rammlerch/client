@@ -5,7 +5,7 @@
     <br />
     <br />
     <input type="radio" ng-model="rdwDetail.vote" value="{{entry.id}}" ng-if="rdwDetail.showForm"/>
-    <span ng-if="!rdwDetail.showForm"><strong>{{entry.stimmen}} ({{rdwDetail.inPerc(entry.stimmen) | number : 2}}%)</strong></span>
+    <span ng-if="!rdwDetail.showForm"><strong>{{rdwDetail.inPerc(entry.stimmen) | number : 2}}%</strong></span>
     <br />
     <br />
     <strong>{{entry.name}}</strong><br />

@@ -28,7 +28,12 @@
       }
 
       vm.inPerc = function(stimme) {
-        return stimme / vm.data.totalStimmen * 100;
+        if (vm.data.totalStimmen > 0) {
+          return stimme / vm.data.totalStimmen * 100;
+        } else {
+          return 0;
+        }
+
       }
 
     }]);

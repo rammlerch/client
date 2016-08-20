@@ -34,19 +34,19 @@
 
       dataFactory.getRammlerDerWoche = function(rdwId) {
         return $http.get(urlBase + '/ch/rammler/rdw/'+rdwId);
-      }
+      };
 
       dataFactory.getRammlerDerWochen = function() {
         return $http.get(urlBase + '/ch/rammler/rdw/aktiv');
-      }
+      };
 
       dataFactory.getRdwNomination = function() {
         return $http.get(urlBase + '/ch/rammler/rdw/nomination/aktuell');
-      }
+      };
 
       dataFactory.vote = function(voteid) {
         return $http.put(urlBase + '/ch/rammler/vote/'+voteid);
-      }
+      };
 
       dataFactory.nominate = function(data) {
         return $http({
@@ -54,7 +54,11 @@
           method: "PUT",
           data: data
         });
-      }
+      };
+
+      dataFactory.getMitgliderportraitListe = function() {
+        return $http.get(urlBase + '/ch/rammler/mitgliederportrait');
+      };
 
       return dataFactory;
     });

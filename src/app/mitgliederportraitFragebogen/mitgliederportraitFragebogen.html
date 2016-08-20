@@ -1,0 +1,39 @@
+<div class="text-center">
+  <h1>{{mitgliederportraitFragebogen.portrait.vorname}}
+    {{mitgliederportraitFragebogen.portrait.nachname}}</h1>
+  <div ng-show="mitgliederportraitFragebogen.zeigeFragenFormular">
+    <h2>Fragebogen</h2>
+    <form name="fragebogen">
+      <div style="margin-bottom: 10px" ng-repeat="frage in mitgliederportraitFragebogen.fragen">
+        <span style="display: inline-block; width: 250px;">{{frage.frage}}</span> <input type="text"
+                                                                                         ng-model="mitgliederportraitFragebogen.antworten[$index].antwort"
+                                                                                         ng-init="mitgliederportraitFragebogen.antworten[$index].frage=frage.id"
+                                                                                         required/>
+      </div>
+      <div style="margin-bottom: 10px" ng-show="fragebogen.$valid">
+        <span style="display: inline-block; width: 250px;"></span>
+        <input type="submit" ng-click="mitgliederportraitFragebogen.fragebogenSpeichern()" value="Speichern"/>
+      </div>
+    </form>
+  </div>
+  <div ng-show="!mitgliederportraitFragebogen.zeigeFragenFormular">
+    <h3>Fragebogen bereits gespeichert.</h3>
+  </div>
+  <div ng-show="mitgliederportraitFragebogen.zeigeFototerminFragebogen">
+    <h2>Fototermin</h2>
+    <form name="fototermin">
+      <div style="margin-bottom: 10px" ng-repeat="fototermin in mitgliederportraitFragebogen.fototermine">
+        <label>
+        <input type="radio" ng-model="mitgliederportraitFragebogen.fototermin" value="{{fototermin.id}}">
+        {{fototermin.termin}}
+      </label>
+      </div>
+      <div style="margin-bottom: 10px" ng-show="mitgliederportraitFragebogen.fototermin > 0">
+        <input type="submit" ng-click="mitgliederportraitFragebogen.fototerminSpeichern()" value="Speichern"/>
+      </div>
+    </form>
+  </div>
+  <div ng-show="!mitgliederportraitFragebogen.zeigeFototerminFragebogen">
+    <h3>Ausgewählter Fototermin: {{mitgliederportraitFragebogen.portrait.fototermin}}</h3>
+  </div>
+</div>

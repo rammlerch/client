@@ -60,6 +60,26 @@
         return $http.get(urlBase + '/ch/rammler/mitgliederportrait');
       };
 
+      dataFactory.getMitgliderportrait = function(id) {
+        return $http.get(urlBase + '/ch/rammler/mitgliederportrait/' + id);
+      };
+
+      dataFactory.getMitgliderportraitFragen = function() {
+        return $http.get(urlBase + '/ch/rammler/mitgliederportrait/fragen');
+      };
+
+      dataFactory.saveMitgliderportraitFragen = function(mitglied, antworten) {
+        return $http.put(urlBase + '/ch/rammler/mitgliederportrait/'+mitglied+'/antworten', antworten);
+      };
+
+      dataFactory.saveFototermin = function(mitglied, fototermin) {
+        return $http.put(urlBase + '/ch/rammler/mitgliederportrait/'+mitglied+'/fototermin/'+fototermin);
+      };
+
+      dataFactory.getMitgliderportraitFototermine = function() {
+        return $http.get(urlBase + '/ch/rammler/mitgliederportrait/fototermin');
+      };
+
       return dataFactory;
     });
 

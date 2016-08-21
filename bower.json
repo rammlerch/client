@@ -2,21 +2,21 @@
   "name": "rammler_bower",
   "version": "0.0.0",
   "dependencies": {
-    "angular-resource": "~1.5.8",
+    "angular-resource": "~1.4.2",
     "angular-new-router": "~0.5.3",
-    "bootstrap-sass": "~3.3.7",
-    "angular-bootstrap": "~2.1.0",
+    "bootstrap-sass": "~3.3.5",
+    "angular-bootstrap": "^0.14.3",
     "malarkey": "yuanqing/malarkey#~1.3.1",
-    "angular-toastr": "~2.1.0",
-    "moment": "~2.14.1",
-    "animate.css": "~3.5.2",
-    "angular": "~1.5.8",
-    "angular-animate": "~1.5.8",
-    "angular-bootstrap-lightbox": "~0.12.0",
-    "angular-sanitize": "~1.5.8"
+    "angular-toastr": "~1.5.0",
+    "moment": "~2.10.6",
+    "animate.css": "~3.4.0",
+    "angular": "~1.4.2",
+    "angular-animate": "~1.4.7",
+    "angular-bootstrap-lightbox": "~0.10.0",
+    "angular-sanitize": "~1.4.7"
   },
   "devDependencies": {
-    "angular-mocks": "~1.5.8"
+    "angular-mocks": "~1.4.2"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -34,17 +34,5 @@
         "dist/router.es5.js"
       ]
     }
-  },
-  "resolutions": {
-    "angular-resource": "~1.5.8",
-    "angular": "~1.5.8",
-    "angular-bootstrap": "~2.1.0",
-    "angular-toastr": "~2.1.0",
-    "moment": "~2.14.1",
-    "animate.css": "~3.5.2",
-    "angular-animate": "~1.5.8",
-    "angular-bootstrap-lightbox": "~0.12.0",
-    "angular-sanitize": "~1.5.8",
-    "angular-mocks": "~1.5.8"
   }
 }

@@ -10,11 +10,11 @@
         "type": null,
         "msg": null,
         "show": false
-      }
+      };
 
       vm.closeAlert = function() {
         vm.alert.show = false;
-      }
+      };
 
       vm.aktiv = false;
       dataFactory.getRdwNomination().then(function(response) {
@@ -27,7 +27,7 @@
         "text": null,
         "umfrage": null,
         "passwort": null
-      }
+      };
 
       vm.showMessage = false;
 
@@ -37,7 +37,7 @@
 
 
       vm.nominieren = function() {
-        dataFactory.nominate(vm.data).then(function(response) {
+        dataFactory.nominate(vm.data).then(function() {
           vm.alert.type = "success";
           vm.alert.msg = "Nomination gespeichert";
           vm.alert.show = true;
@@ -48,7 +48,7 @@
             "umfrage": null,
             "passwort": null
           }
-        }, function(response) {
+        }, function() {
           vm.alert.type = "danger";
           vm.alert.msg = "Passwort falsch!";
           vm.alert.show = true;

@@ -35,6 +35,7 @@ angular.module('rammler')
           { path: '/verein/kontakt', component: 'kontakt' },
           { path: '/verein/impressum', component: 'impressum' },
           { path: '/mitglieder/:instr', component: 'mitglied' },
+          { path: '/mitglieder2/:instr', component: 'mitglied2' },
           { path: '/agenda', component: 'agenda' },
           { path: '/galerie', component: 'galerie' },
           { path: '/galerie/:id', component: 'galerieDetail' },

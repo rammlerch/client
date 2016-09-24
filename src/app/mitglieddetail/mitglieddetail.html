@@ -1,6 +1,6 @@
 <div class="text-center">
   <h1 class="text-capitalize">{{mitglieddetail.entry.vorname}} {{mitglieddetail.entry.nachname}}</h1>
-  <div class="col-md-6 col-sm-6 col-xs-12" ng-if="mitglieddetail.entry.type == 'l'">
+  <div class="col-md-6 col-sm-6 col-xs-12" ng-if="mitglieddetail.type == 'l'">
     <table>
       <tr ng-repeat="qa in mitglieddetail.entry.fragebogen">
         <td>{{qa.frage}}</td>
@@ -11,7 +11,7 @@
   <div class="col-md-6 col-sm-6 col-xs-12">
       <img ng-src="{{mitglieddetail.entry.image}}" class="img-thumbnail">
   </div>
-  <div class="col-md-6 col-sm-6 col-xs-12" ng-if="mitglieddetail.entry.type == 'r'">
+  <div class="col-md-6 col-sm-6 col-xs-12" ng-if="mitglieddetail.type == 'r'">
     <table>
       <tr ng-repeat="qa in mitglieddetail.entry.fragebogen">
         <td>{{qa.frage}}</td>

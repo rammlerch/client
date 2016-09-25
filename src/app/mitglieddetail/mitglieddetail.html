@@ -10,11 +10,9 @@
       <img ng-src="{{mitglieddetail.entry.image}}" class="img-thumbnail">
   </div>
   <div class="col-md-6 col-sm-6 col-xs-12" ng-if="mitglieddetail.type == 'r'">
-    <table width="100%">
-      <tr ng-repeat="qa in mitglieddetail.entry.fragebogen">
-        <td><h4>{{qa.frage}}</h4></td>
-        <td><h4>{{qa.antwort}}</h4></td>
-      </tr>
-    </table>
+    <div ng-repeat="qa in mitglieddetail.entry.fragebogen">
+      <h3>{{qa.frage}}</h3>
+      <h4>{{qa.antwort}}</h4>
+    </div>
   </div>
 </div>

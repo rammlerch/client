@@ -1,9 +1,8 @@
 <div class="text-center" ng-controller="VorstandController as vorstand">
   <h1>Vorstand</h1>
   <div class="col-md-3 col-sm-4 col-xs-6 col-height" ng-repeat="mitglied in vorstand.entries">
-    <a ng-click="vorstand.openLightboxModal($index)" style="cursor: pointer">
-      <img ng-src="{{mitglied.thumb}}" class="img-thumbnail" />
-    </a><br />
+    <img ng-src="{{mitglied.thumb}}" class="img-thumbnail" />
+    <br />
     <strong>{{mitglied.funktion}}</strong><br />
     {{mitglied.name}}<br />
     <address>

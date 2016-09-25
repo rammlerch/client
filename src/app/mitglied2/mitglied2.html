@@ -1,6 +1,7 @@
 <div class="text-center">
   <h1 class="text-capitalize">{{mitglied2.instr}}</h1>
   <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="mit in mitglied2.entries">
-      <a href="#/mitglied/{{mit.id}}/{{mit.type}}"><img ng-src="{{mit.thumb}}" class="img-thumbnail"></a>
+      <a href="#/mitglied/{{mit.id}}/{{mit.type}}"><img ng-src="{{mit.thumb}}" class="img-thumbnail"></a><br />
+      {{mit.name}}
   </div>
 </div>

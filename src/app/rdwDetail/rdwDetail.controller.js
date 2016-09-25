@@ -13,19 +13,19 @@
       });
 
       vm.doVote = function() {
-        dataFactory.vote(vm.vote).then(function (response) {
+        dataFactory.vote(vm.vote).then(function () {
           dataFactory.getRammlerDerWoche($routeParams.id).then(function (response) {
             vm.data = response.data;
             vm.showForm = vm.data.canVote;
           })
         });
-      }
+      };
 
       vm.toggleForm = function() {
         if(vm.data.canVote) {
           vm.showForm = !vm.showForm;
         }
-      }
+      };
 
       vm.inPerc = function(stimme) {
         if (vm.data.totalStimmen > 0) {

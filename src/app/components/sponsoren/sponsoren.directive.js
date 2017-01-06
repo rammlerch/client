@@ -20,13 +20,16 @@
     function SponsorenController($scope) {
       $scope.myInterval = 5000;
       $scope.noWrapSlides = false;
-      $scope.hauptsponsor = {image: 'assets/images/sponsoren/grafic-design.jpeg', url: 'http://www.gdnet.ch/'};
       $scope.sponsoren = [
-        {image: 'assets/images/sponsoren/fahrschule_egger.png', url: 'http://www.egger-bueron.ch/'},
-        {image: 'assets/images/sponsoren/hecht-holzbau.jpeg', url: 'http://hecht-holzbau.ch/'},
-        {image: 'assets/images/sponsoren/intercheese.jpg', url: 'http://www.intercheese.ch/'},
+        {image: 'assets/images/sponsoren/grafic-design.jpeg', url: 'http://www.gdnet.ch/'},
+        {image: 'assets/images/sponsoren/kronenberg.png'},
+        {image: 'assets/images/sponsoren/intercheese.png', url: 'http://www.intercheese.ch/'},
+        {image: 'assets/images/sponsoren/s-team.png', url: 'http://www.s-team.ch/'},
         {image: 'assets/images/sponsoren/mse.jpeg', url: 'http://www.ms-element.ch/'},
-        {image: 'assets/images/sponsoren/s-team.png', url: 'http://www.s-team.ch/'}
+        {image: 'assets/images/sponsoren/gilli.png', url: 'http://www.gilli-hoerberatung.ch/'},
+        {image: 'assets/images/sponsoren/lehmann_schreinerei.png'},
+        {image: 'assets/images/sponsoren/musikpunkt.png', url: 'http://www.musikpunkt.ch/'},
+        {image: 'assets/images/sponsoren/computerline.png', url: 'http://www.computerline.com/de/'},
       ];
     }
   }

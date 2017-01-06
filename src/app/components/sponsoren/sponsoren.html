@@ -1,15 +1,11 @@
-<h3>Hauptsponsor</h3>
-<div id="hauptsponsor"></div>
-<a ng-href="{{hauptsponsor.url}}">
-  <img src="{{hauptsponsor.image}}" target="_blank" width="100%"/>
-</a>
 <h3>Sponsoren</h3>
 <div style="height: 150px">
   <carousel interval="3000" no-wrap="false">
     <slide ng-repeat="sponsor in sponsoren">
-      <a ng-href="{{sponsor.url}}">
+      <a ng-href="{{sponsor.url}}" ng-show="sponsor.url">
         <img src="{{sponsor.image}}" target="_blank" width="100%"/>
       </a>
+      <img src="{{sponsor.image}}" target="_blank" width="100%" ng-hide="sponsor.url"/>
       <div class="carousel-caption"></div>
     </slide>
   </carousel>

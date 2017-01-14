@@ -2,7 +2,7 @@
   <div class="col-md-12 col-sm-12 col-xs-12 " ng-repeat="entry in rdw.data" >
     <h1 class="text-capitalize">{{entry.titel}}</h1>
     <a href="#/rdw/{{entry.id}}">
-      <img ng-src="{{entry.sieger.thumbUrl}}" class="img-thumbnail" style="height: 150px" ng-show="entry.isEnded == 1">
+      <img ng-src="{{entry.sieger.thumbUrl}}" class="img-thumbnail" ng-show="entry.isEnded == 1">
       <img ng-src="assets/images/abstimmung.png" class="img-thumbnail" style="height: 150px" ng-show="entry.isEnded == 0">
     </a>
   </div>

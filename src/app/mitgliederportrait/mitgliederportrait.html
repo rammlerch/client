@@ -5,13 +5,13 @@
       <th style="text-align: center" width="100px">Vorname</th>
       <th style="text-align: center" width="100px">Nachname</th>
       <th style="text-align: center" width="100px">Antworten</th>
-      <th style="text-align: center" width="280px">Fototermin</th>
+      <th style="text-align: center" width="280px" ng-if="false">Fototermin</th>
     </thead>
     <tr ng-repeat="portrait in $ctrl.liste">
       <td>{{portrait.vorname}}</td>
       <td>{{portrait.nachname}}</td>
       <td>{{portrait.hat_geantwortet ? 'Ja' : 'Nein'}}</td>
-      <td>{{portrait.fototermin}}</td>
+      <td ng-if="false">{{portrait.fototermin}}</td>
     </tr>
   </table>
 </div>

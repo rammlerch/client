@@ -19,7 +19,7 @@
   <div ng-show="!mitgliederportraitFragebogen.zeigeFragenFormular">
     <h3>Fragebogen bereits gespeichert.</h3>
   </div>
-  <div ng-show="mitgliederportraitFragebogen.zeigeFototerminFragebogen">
+  <div ng-show="mitgliederportraitFragebogen.zeigeFototerminFragebogen" ng-if="false">
     <h2>Fototermin</h2>
     <form name="fototermin">
       <div style="margin-bottom: 10px" ng-repeat="fototermin in mitgliederportraitFragebogen.fototermine">
@@ -33,7 +33,7 @@
       </div>
     </form>
   </div>
-  <div ng-show="!mitgliederportraitFragebogen.zeigeFototerminFragebogen">
+  <div ng-show="!mitgliederportraitFragebogen.zeigeFototerminFragebogen" ng-if="false">
     <h3>Ausgew&auml;hlter Fototermin: {{mitgliederportraitFragebogen.portrait.fototermin}}</h3>
   </div>
 </div>

@@ -15,32 +15,12 @@
             vm.zeigeFragenFormular = true;
             ladeFragen();
           }
-          if(vm.portrait.fototermin === null) {
-            vm.zeigeFototerminFragebogen = true;
-            ladeFototermine();
-          }
-
         });
 
         vm.fragebogenSpeichern = function() {
             dataFactory.saveMitgliderportraitFragen(vm.id, vm.antworten)
             .then(function() {
               vm.zeigeFragenFormular = false;
-            })
-            .catch(function() {
-              alert('Fehler beim Speichern. Versuche es später noch einmal.');
-            });
-        };
-
-        vm.fototerminSpeichern = function() {
-            dataFactory.saveFototermin(vm.id, vm.fototermin)
-            .then(function() {
-              angular.forEach(vm.fototermine, function(value) {
-                if(value.id === vm.fototermin) {
-                  vm.portrait.fototermin = value.termin;
-                }
-              });
-              vm.zeigeFototerminFragebogen = false;
             })
             .catch(function() {
               alert('Fehler beim Speichern. Versuche es später noch einmal.');
@@ -54,12 +34,6 @@
             });
         }
 
-        function ladeFototermine() {
-          dataFactory.getMitgliderportraitFototermine()
-            .then(function (response) {
-              vm.fototermine = response.data;
-            });
-        }
 
     }]);
 

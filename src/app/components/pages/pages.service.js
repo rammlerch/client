@@ -24,7 +24,6 @@ angular.module('rammler')
             { name: 'Glocke', path: '/mitglieder/glocke'}
           ]},
           { name: 'Agenda', path: '/agenda'},
-          { name: 'Rammler der Woche', path: '/rdw'},
           { name: 'Galerie', path: '/galerie'}
         ];
       },

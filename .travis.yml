@@ -4,6 +4,7 @@ node_js:
 before_script:
 - npm install -g gulp
 - npm install -g bower
+- npm install
 - bower update
 script: gulp
 after_success: gulp deploy --user $FTP_USER_master --password $FTP_PASSWORD_master

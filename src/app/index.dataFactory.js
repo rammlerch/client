@@ -60,8 +60,8 @@
         return $http.get(urlBase + '/ch/rammler/mitgliederportrait');
       };
 
-      dataFactory.getMitgliderportrait = function(id, type) {
-        return $http.get(urlBase + '/ch/rammler/mitgliederportrait/' + id + '/' + type);
+      dataFactory.getMitgliderportrait = function(id) {
+        return $http.get(urlBase + '/ch/rammler/mitgliederportrait/' + id);
       };
 
       dataFactory.getMitgliderportraitFragen = function() {

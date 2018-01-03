@@ -41,7 +41,7 @@
           },
           controllerAs: '$ctrl'
         })
-        .when('/galerie/:id', {
+        .when('/galerien/:saison/:id', {
           template: '<galerie-detail id="$ctrl.id"></galerie-detail>',
           controller: function ($routeParams) {
             var $ctrl = this;

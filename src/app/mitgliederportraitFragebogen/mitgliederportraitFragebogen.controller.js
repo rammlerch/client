@@ -3,24 +3,31 @@
 
   angular
     .module('rammler')
-    .controller('MitgliederportraitFragebogenController', ['$routeParams', 'dataFactory', function ($routeParams, dataFactory) {
-      var vm = this;
+    .component('mitgliederportraitFragebogen', {
+      bindings: {
+        id: '<'
+      },
+      templateUrl: 'app/mitgliederportraitFragebogen/mitgliederportraitFragebogen.html',
+      controller: function (dataFactory) {
+        var $ctrl = this;
 
-      vm.id = $routeParams.id / 113581321;
+        $ctrl.$onInit = function () {
+          $ctrl.id = $ctrl.id / 113581321;
 
-      dataFactory.getMitgliderportrait(vm.id)
-        .then(function (response) {
-          vm.portrait = response.data;
-          if(!vm.portrait.hat_geantwortet) {
-            vm.zeigeFragenFormular = true;
-            ladeFragen();
-          }
-        });
+          dataFactory.getMitgliderportrait($ctrl.id)
+            .then(function (response) {
+              $ctrl.portrait = response.data;
+              if(!$ctrl.portrait.hat_geantwortet) {
+                $ctrl.zeigeFragenFormular = true;
+                ladeFragen();
+              }
+            });
+        };
 
-        vm.fragebogenSpeichern = function() {
-            dataFactory.saveMitgliderportraitFragen(vm.id, vm.antworten)
+        $ctrl.fragebogenSpeichern = function() {
+          dataFactory.saveMitgliderportraitFragen($ctrl.id, $ctrl.antworten)
             .then(function() {
-              vm.zeigeFragenFormular = false;
+              $ctrl.zeigeFragenFormular = false;
             })
             .catch(function() {
               alert('Fehler beim Speichern. Versuche es später noch einmal.');
@@ -30,12 +37,11 @@
         function ladeFragen() {
           dataFactory.getMitgliderportraitFragen()
             .then(function (response) {
-              vm.fragen = response.data;
+              $ctrl.fragen = response.data;
             });
         }
-
-
-    }]);
+      }
+    });
 
 
 })();

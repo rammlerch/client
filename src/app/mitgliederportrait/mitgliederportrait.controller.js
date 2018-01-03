@@ -3,15 +3,18 @@
 
   angular
     .module('rammler')
-    .controller('MitgliederportraitController', ['$routeParams', 'dataFactory', function ($routeParams, dataFactory) {
-      var vm = this;
+    .component('mitgliederportrait', {
+      templateUrl: 'app/mitgliederportrait/mitgliederportrait.html',
+      controller: function (dataFactory) {
+        var $ctrl = this;
 
-      dataFactory.getMitgliderportraitListe()
-        .then(function (response) {
-          vm.liste = response.data;
-        });
-
-    }]);
+        $ctrl.$onInit = function () {
+          dataFactory.getMitgliderportraitListe().then(function (response) {
+              $ctrl.liste = response.data;
+            });
+        };
+      }
+    });
 
 
 })();

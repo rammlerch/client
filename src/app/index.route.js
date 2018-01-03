@@ -44,6 +44,17 @@
           },
           controllerAs: '$ctrl'
         })
+        .when('/0848fe13e07316b54817afb60a9d10eb441e3fcfc4bb54b26dbcb037872f3d98', {
+          template: '<mitgliederportrait></mitgliederportrait>'
+        })
+        .when('/0848fe13e07316b54817afb60a9d10eb441e3fcfc4bb54b26dbcb037872f3d98/:id', {
+          template: '<mitgliederportrait-fragebogen id="$ctrl.id"></mitgliederportrait-fragebogen>',
+          controller: function ($routeParams) {
+            var $ctrl = this;
+            $ctrl.id = $routeParams.id;
+          },
+          controllerAs: '$ctrl'
+        })
         .otherwise({
           template: '<main></main>'
         });

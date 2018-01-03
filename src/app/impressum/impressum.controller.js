@@ -3,8 +3,8 @@
 
   angular
     .module('rammler')
-    .controller('ImpressumController', function () {
-  });
-
+    .component('impressum', {
+      templateUrl: 'app/impressum/impressum.html'
+    });
 
 })();

@@ -5,6 +5,7 @@
     <title>Rhythmus Rammler Schlierbach</title>
     <meta name="description" content="Rhythmus Rammler, Rammler, Schlierbach, Guggenmusik, Fasnacht">
     <meta name="viewport" content="width=device-width">
+    <base href="/">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -34,7 +35,7 @@
         <div class="col-md-12 col-sd-12 col-xs-12" navbar></div>
       </div>
       <div class="row">
-        <div class="col-md-9 col-sm-8 col-xs-12" ng-viewport ng-controller="RouterController"></div>
+        <div class="col-md-9 col-sm-8 col-xs-12" ng-view></div>
         <div class="col-xs-3 visible-xs"></div>
         <div class="col-md-3 col-sm-4 col-xs-6 text-center" sponsoren></div>
         <div class="col-xs-3 visible-xs"></div>

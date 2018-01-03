@@ -1,7 +1,7 @@
-<div class="text-center" ng-controller="AgendaController as agenda">
+<div class="text-center">
   <h1>Agenda</h1>
   <table class="table table-hover table-responsive">
-    <tr ng-repeat="x in agenda.entries">
+    <tr ng-repeat="x in $ctrl.entries">
       <th class="text-center" ng-if="x.highlight == 1">{{ x.datum }}</th>
       <th class="text-center" ng-if="x.highlight == 1">{{ x.name }}</th>
       <th class="text-center" ng-if="x.highlight == 1">{{ x.ort }}</th>

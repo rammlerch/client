@@ -3,15 +3,17 @@
 
   angular
     .module('rammler')
-    .controller('GalerieController', ['dataFactory', function (dataFactory) {
-      var vm = this;
+    .component('galerie', {
+      templateUrl: 'app/galerie/galerie.html',
+      controller: function (dataFactory) {
+        var $ctrl = this;
 
-      dataFactory.getGalerien().then(function (response) {
-          vm.data = response.data;
-        }, function () {
-        });
-
-  }]);
-
+        $ctrl.$onInit = function () {
+          dataFactory.getGalerien().then(function (response) {
+            $ctrl.data = response.data;
+          });
+        };
+      }
+    });
 
 })();

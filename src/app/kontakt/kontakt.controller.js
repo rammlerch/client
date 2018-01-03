@@ -3,6 +3,7 @@
 
   angular
     .module('rammler')
-    .controller('KontaktController', function () {
-  });
+    .component('kontakt', {
+      templateUrl: 'app/kontakt/kontakt.html'
+    });
 })();

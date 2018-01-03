@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('rammler', ['ngResource', 'ngNewRouter', 'ui.bootstrap', 'ngAnimate', 'bootstrapLightbox', 'ngSanitize']);
+    .module('rammler', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ngAnimate', 'bootstrapLightbox', 'ngSanitize']);
 
 })();

@@ -1,0 +1,15 @@
+<div class="text-center">
+  <h1 class="text-capitalize">{{$ctrl.entry.vorname}} {{$ctrl.entry.nachname}}</h1>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <img ng-src="{{$ctrl.entry.image}}" class="img-thumbnail">
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div ng-repeat="qa in $ctrl.entry.fragebogen" ng-if="$ctrl.entry.fragebogen">
+      <h3>{{qa.frage}}</h3>
+      <h4>{{qa.antwort}}</h4>
+    </div>
+    <div ng-if="!$ctrl.entry.fragebogen">
+      <h3>Fragebogen noch nicht ausgef&uuml;llt</h3>
+    </div>
+  </div>
+</div>

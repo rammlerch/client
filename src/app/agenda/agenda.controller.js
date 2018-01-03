@@ -3,14 +3,17 @@
 
   angular
     .module('rammler')
-    .controller('AgendaController', function (dataFactory) {
-      var vm = this
-      dataFactory.getAgenda().then(function (response) {
-          vm.entries = response.data;
-        }, function () {
-        });
+    .component('agenda', {
+      templateUrl: 'app/agenda/agenda.html',
+      controller: function (dataFactory) {
+        var $ctrl = this;
 
-  });
-
+        $ctrl.$onInit = function () {
+          dataFactory.getAgenda().then(function (response) {
+            $ctrl.entries = response.data;
+          });
+        }
+      }
+    });
 
 })();

@@ -3,19 +3,25 @@
 
   angular
     .module('rammler')
-    .controller('GalerieDetailController', ['dataFactory', 'Lightbox', '$routeParams', function (dataFactory, Lightbox, $routeParams) {
-      var vm = this;
+    .component('galerieDetail', {
+      bindings: {
+        id: '<'
+      },
+      templateUrl: 'app/galerieDetail/galerieDetail.html',
+      controller: function (dataFactory, Lightbox) {
+        var $ctrl = this;
 
-      dataFactory.getGalerie($routeParams.id).then(function (response) {
-          vm.data = response.data;
-        }, function () {
-        });
+        $ctrl.$onInit = function () {
+          dataFactory.getGalerie($ctrl.id).then(function (response) {
+            $ctrl.data = response.data;
+          });
+        };
 
-      vm.openLightboxModal = function (index) {
-        Lightbox.openModal(vm.data.bilder, index);
-      };
-
-  }]);
+        $ctrl.openLightboxModal = function (index) {
+          Lightbox.openModal($ctrl.data.bilder, index);
+        };
+      }
+  });
 
 
 })();

@@ -3,39 +3,47 @@
 
   angular
     .module('rammler')
-    .controller('RdwDetailController', ['$routeParams', 'dataFactory', function ($routeParams, dataFactory) {
-      var vm = this;
-      vm.showForm = false;
-      vm.vote = 0;
-      dataFactory.getRammlerDerWoche($routeParams.id).then(function (response) {
-        vm.data = response.data;
-        vm.showForm = vm.data.canVote;
-      });
+    .component('rdwDetail', {
+      bindings: {
+        id: '<'
+      },
+      templateUrl: 'app/rdwDetail/rdwDetail.html',
+      controller: function (dataFactory) {
+        var $ctrl = this;
 
-      vm.doVote = function() {
-        dataFactory.vote(vm.vote).then(function () {
-          dataFactory.getRammlerDerWoche($routeParams.id).then(function (response) {
-            vm.data = response.data;
-            vm.showForm = vm.data.canVote;
-          })
-        });
-      };
+        $ctrl.$onInit = function () {
+          $ctrl.showForm = false;
+          $ctrl.vote = 0;
+          dataFactory.getRammlerDerWoche($ctrl.id).then(function (response) {
+            $ctrl.data = response.data;
+            $ctrl.showForm = $ctrl.data.canVote;
+          });
+        };
 
-      vm.toggleForm = function() {
-        if(vm.data.canVote) {
-          vm.showForm = !vm.showForm;
+        $ctrl.doVote = function() {
+          dataFactory.vote($ctrl.vote).then(function () {
+            dataFactory.getRammlerDerWoche($ctrl.id).then(function (response) {
+              $ctrl.data = response.data;
+              $ctrl.showForm = $ctrl.data.canVote;
+            })
+          });
+        };
+
+        $ctrl.toggleForm = function() {
+          if($ctrl.data.canVote) {
+            $ctrl.showForm = !$ctrl.showForm;
+          }
+        };
+
+        $ctrl.inPerc = function(stimme) {
+          if ($ctrl.data.totalStimmen > 0) {
+            return stimme / $ctrl.data.totalStimmen * 100;
+          } else {
+            return 0;
+          }
+
         }
-      };
-
-      vm.inPerc = function(stimme) {
-        if (vm.data.totalStimmen > 0) {
-          return stimme / vm.data.totalStimmen * 100;
-        } else {
-          return 0;
-        }
-
       }
-
-    }]);
+    });
 
 })();

@@ -1,27 +1,27 @@
-<div class="text-center" ng-controller="RdwNominationController as rdw">
+<div class="text-center">
   <h1>Rammler der Woche - Nomination</h1>
-  <uib-alert type="{{rdw.alert.type}}" close="rdw.closeAlert()" ng-show="rdw.alert.show" >{{rdw.alert.msg}}</uib-alert>
-  <div class="col-md-12 col-sm-12 col-xs-12 col-height" ng-if="!rdw.aktiv">
+  <uib-alert type="{{$ctrl.alert.type}}" close="$ctrl.closeAlert()" ng-show="$ctrl.alert.show" >{{$ctrl.alert.msg}}</uib-alert>
+  <div class="col-md-12 col-sm-12 col-xs-12 col-height" ng-if="!$ctrl.aktiv">
     Aktuell k&ouml;nnen keine Kandidaten nominiert werden.
   </div>
-  <div class="col-md-12 col-sm-12 col-xs-12 col-height" ng-if="rdw.aktiv">
+  <div class="col-md-12 col-sm-12 col-xs-12 col-height" ng-if="$ctrl.aktiv">
     <form name="nominationForm">
       <label for="mitglied">Mitglied:</label>
       <br />
-      <select name="mitglied" id="mitglied" ng-model="rdw.data.mitglied">
-        <option ng-repeat="mitglied in rdw.mitglieder" value="{{mitglied.id}}">{{mitglied.vorname}} {{mitglied.nachname}}</option>
+      <select name="mitglied" id="mitglied" ng-model="$ctrl.data.mitglied">
+        <option ng-repeat="mitglied in $ctrl.mitglieder" value="{{mitglied.id}}">{{mitglied.vorname}} {{mitglied.nachname}}</option>
       </select>
       <br /><br />
       <label for="grund">Grund:</label>
       <br />
-      <textarea id="grund" ng-model="rdw.data.text" name="grund"></textarea>
+      <textarea id="grund" ng-model="$ctrl.data.text" name="grund"></textarea>
       <br />
       <label for="passwort">Passwort:</label>
       <br />
-      <input id="passwort" ng-model="rdw.data.passwort" name="passwort" type="password"/>
+      <input id="passwort" ng-model="$ctrl.data.passwort" name="passwort" type="password"/>
       <br />
       <br />
-      <button ng-click="rdw.nominieren()">Abschicken</button>
+      <button ng-click="$ctrl.nominieren()">Abschicken</button>
     </form>
   </div>
 </div>

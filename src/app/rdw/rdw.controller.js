@@ -3,11 +3,17 @@
 
   angular
     .module('rammler')
-    .controller('RdwController', function (dataFactory) {
-      var vm = this;
-      dataFactory.getRammlerDerWochen().then(function (response) {
-        vm.data = response.data;
-      });
+    .component('rdw', {
+      templateUrl: 'app/rdw/rdw.html',
+      controller: function (dataFactory) {
+        var $ctrl = this;
+
+        $ctrl.$onInit = function () {
+          dataFactory.getRammlerDerWochen().then(function (response) {
+            $ctrl.data = response.data;
+          });
+        };
+      }
     });
 
 })();

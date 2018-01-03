@@ -2,9 +2,6 @@
 angular.module('rammler')
   .service('pages', function() {
     return {
-      brand: function() {
-        return { name: 'Rammler.ch', path: '/'};
-      },
       navigation: function() {
         return [
           { name: 'Home', path: '/'},

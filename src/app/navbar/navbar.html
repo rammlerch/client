@@ -12,12 +12,10 @@
   <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
     <ul class="nav navbar-nav">
-      <!--<li class="active"><a href="#">Link</a></li>-->
-
-      <li ng-repeat="element in navigation" dropdown>
+      <li ng-repeat="element in navigation" uib-dropdown>
 
         <a ng-href="{{element.path}}" ng-if="element.dropdown === undefined">{{element.name}}</a>
-        <a ng-href="{{element.path}}" dropdown-toggle ng-if="element.dropdown !== undefined">{{element.name}} <b class="caret"></b></a>
+        <a ng-href="{{element.path}}" uib-dropdown-toggle ng-if="element.dropdown !== undefined">{{element.name}} <b class="caret"></b></a>
         <ul class="dropdown-menu" ng-if="element.dropdown !== undefined">
           <li ng-repeat="sub_element in element.dropdown">
             <a ng-href="{{sub_element.path}}">{{sub_element.name}}</a>

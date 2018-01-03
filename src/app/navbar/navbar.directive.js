@@ -9,7 +9,7 @@
   function navbar() {
     var directive = {
       restrict: 'A',
-      templateUrl: 'app/components/navbar/navbar.html',
+      templateUrl: 'app/navbar/navbar.html',
       controller: NavbarController,
       bindToController: true
     };
@@ -18,7 +18,6 @@
 
     /** @ngInject */
     function NavbarController($scope, pages) {
-      $scope.brand = pages.brand();
       $scope.navigation = pages.navigation();
     }
   }

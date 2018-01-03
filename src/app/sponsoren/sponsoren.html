@@ -1,0 +1,12 @@
+<h3>Sponsoren</h3>
+<div style="height: 150px">
+  <div uib-carousel active="activeSlide" interval="myInterval" no-wrap="noWrapSlides">
+    <div uib-slide ng-repeat="sponsor in sponsoren track by sponsor.id" index="sponsor.id">
+      <a ng-href="{{sponsor.url}}" target="_blank" ng-show="sponsor.url">
+        <img src="{{sponsor.image}}" width="100%"/>
+      </a>
+      <img src="{{sponsor.image}}" width="100%" ng-hide="sponsor.url"/>
+    </div>
+    </div>
+  </div>
+</div>

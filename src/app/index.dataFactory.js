@@ -72,14 +72,6 @@
         return $http.put(urlBase + '/ch/rammler/mitgliederportrait/'+mitglied+'/antworten', antworten);
       };
 
-      dataFactory.saveFototermin = function(mitglied, fototermin) {
-        return $http.put(urlBase + '/ch/rammler/mitgliederportrait/'+mitglied+'/fototermin/'+fototermin);
-      };
-
-      dataFactory.getMitgliderportraitFototermine = function() {
-        return $http.get(urlBase + '/ch/rammler/mitgliederportrait/fototermin');
-      };
-
       return dataFactory;
     });
 

@@ -37,6 +37,7 @@ function browserSyncInit(baseDir, browser) {
     '^/rest' : '/',
     '^/index.php' : '/'
   }});
+  // server.middleware = proxyMiddleware(['/rest'], {target: 'http://rammler.ch', changeOrigin: true});
 
   browserSync.instance = browserSync.init({
     startPath: '/',

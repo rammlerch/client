@@ -28,8 +28,12 @@
         return $http.get(urlBase + '/ch/rammler/galerie/'+galerieId);
       };
 
+      dataFactory.getGalerienForSaison = function(saisonId) {
+        return $http.get(urlBase + '/ch/rammler/galerie/saison/'+saisonId);
+      };
+
       dataFactory.getGalerien = function() {
-        return $http.get(urlBase + '/ch/rammler/galerie/aktiv');
+        return $http.get(urlBase + '/ch/rammler/galerie/saison');
       };
 
       dataFactory.getRammlerDerWoche = function(rdwId) {

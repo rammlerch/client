@@ -33,8 +33,13 @@
         .when('/agenda', {
           template: '<agenda></agenda>'
         })
-        .when('/galerie', {
-          template: '<galerie></galerie>'
+        .when('/galerien/:saison', {
+          template: '<galerie saison="$ctrl.saison"></galerie>',
+          controller: function ($routeParams) {
+            var $ctrl = this;
+            $ctrl.saison = $routeParams.saison;
+          },
+          controllerAs: '$ctrl'
         })
         .when('/galerie/:id', {
           template: '<galerie-detail id="$ctrl.id"></galerie-detail>',

@@ -5,7 +5,7 @@
     .module('rammler')
     .component('navbar', {
       templateUrl: 'app/navbar/navbar.html',
-      controller: function () {
+      controller: function (dataFactory) {
         var $ctrl = this;
 
         $ctrl.$onInit = function () {
@@ -26,9 +26,25 @@
               { name: 'Pauke', path: '/mitglieder/pauke'},
               { name: 'Glocke', path: '/mitglieder/glocke'}
             ]},
-            { name: 'Agenda', path: '/agenda'},
-            { name: 'Galerie', path: '/galerie'}
+            { name: 'Agenda', path: '/agenda'}
           ];
+
+          dataFactory.getGalerien().then(function (response) {
+            if(response && response.data) {
+              var galerieNavigation = {
+                name: 'Galerie',
+                path: '/galerien',
+                dropdown:[]
+              };
+              response.data.forEach(function (element) {
+                galerieNavigation.dropdown.push({
+                  name: element.name,
+                  path: '/galerien/' + element.id
+                });
+              });
+              $ctrl.navigation.push(galerieNavigation);
+            }
+          });
         };
       }
     });

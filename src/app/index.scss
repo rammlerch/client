@@ -35,9 +35,13 @@ $dropdown-border:                $rammler;
 
 $table-border-color:            $rammler;
 
-
+$border-radius-base: 0px 0px 10px 10px;
 $navbar-inverse-link-color: $rammler;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+$thumbnail-border-radius: 25px;
+$thumbnail-padding: 0px;
+$thumbnail-border: $rammler;
 
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject

@@ -26,6 +26,7 @@
               { name: 'Pauke', path: '/mitglieder/pauke'},
               { name: 'Glocke', path: '/mitglieder/glocke'}
             ]},
+            { name: 'Rammler der Woche', path: '/rdw'},
             { name: 'Agenda', path: '/agenda'}
           ];
 
